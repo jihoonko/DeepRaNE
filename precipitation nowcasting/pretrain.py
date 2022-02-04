@@ -70,9 +70,9 @@ if __name__ == '__main__':
                         help="learning rate")
     parser.add_argument("--n-steps", type=int, default=50000,
                         help="number of training steps")
-    parser.add_argument("--batch-size", type=int, default=16,
+    parser.add_argument("--batch-size", type=int, default=20,
                         help="number of batch size")
-    parser.add_argument("--data-path", type=str, default='/data/raw',
+    parser.add_argument("--data-path", type=str, default=None,
                         help="path of radar data")
     parser.add_argument("--gpus", type=str, default=None,
                         help="gpu id for execution")

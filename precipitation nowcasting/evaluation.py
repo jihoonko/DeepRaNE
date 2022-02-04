@@ -49,17 +49,17 @@ def evaluation(args):
         print("CSI Score")
         ## CSI Measure
         for i in range(6):
-            print(f'CSI score ({i+1}h, >= 10mm)', confusion_matrix[i][2][2] / (confusion_matrix[i][2][2] + confusion_matrix[i][2][1] + confusion_matrix[i][2][0] + confusion_matrix[i][1][2] + confusion_matrix[i][0][2]))
-            print(f'CSI score ({i+1}h, >= 1mm)', (confusion_matrix[i][1][1]+confusion_matrix[i][1][2]+confusion_matrix[i][2][1]+confusion_matrix[i][2][2]) / (np.sum(confusion_matrix[i]) - confusion_matrix[i][0][0]))
-            print(f'CSI score ({i+1}h, < 1mm)', (confusion_matrix[i][0][0]/(np.sum(confusion_matrix[i]) - (confusion_matrix[i][1][1]+confusion_matrix[i][1][2]+confusion_matrix[i][2][1]+confusion_matrix[i][2][2]))))
+            print(f'CSI score ({i+1}h, >= 10mm)', confusion_matrix[i][2][2] / (1e-6 + confusion_matrix[i][2][2] + confusion_matrix[i][2][1] + confusion_matrix[i][2][0] + confusion_matrix[i][1][2] + confusion_matrix[i][0][2]))
+            print(f'CSI score ({i+1}h, >= 1mm)', (confusion_matrix[i][1][1]+confusion_matrix[i][1][2]+confusion_matrix[i][2][1]+confusion_matrix[i][2][2]) / (1e-6 + np.sum(confusion_matrix[i]) - confusion_matrix[i][0][0]))
+            print(f'CSI score ({i+1}h, < 1mm)', (confusion_matrix[i][0][0]/(1e-6 + np.sum(confusion_matrix[i]) - (confusion_matrix[i][1][1]+confusion_matrix[i][1][2]+confusion_matrix[i][2][1]+confusion_matrix[i][2][2]))))
 
         print("F1 Score")
         ## F1 Score
         for i in range(6):
-            print(f'F1 score ({i+1}h, >= 10mm)', 2*confusion_matrix[i][2][2] / (2*confusion_matrix[i][2][2] + confusion_matrix[i][2][1] + confusion_matrix[i][2][0] + confusion_matrix[i][1][2] + confusion_matrix[i][0][2]))
+            print(f'F1 score ({i+1}h, >= 10mm)', 2*confusion_matrix[i][2][2] / (1e-6 + 2*confusion_matrix[i][2][2] + confusion_matrix[i][2][1] + confusion_matrix[i][2][0] + confusion_matrix[i][1][2] + confusion_matrix[i][0][2]))
             x = (confusion_matrix[i][1][1]+confusion_matrix[i][1][2]+confusion_matrix[i][2][1]+confusion_matrix[i][2][2])
-            print(f'F1 score ({i+1}h, >= 1mm)', 2*x / (2*x + confusion_matrix[i][0][1] + confusion_matrix[i][0][2] + confusion_matrix[i][1][0] + confusion_matrix[i][2][0]))
-            print(f'F1 score ({i+1}h, < 1mm)', 2* confusion_matrix[i][0][0]/(2* confusion_matrix[i][0][0] + confusion_matrix[i][0][1] + confusion_matrix[i][0][2] + confusion_matrix[i][1][0] + confusion_matrix[i][2][0]))
+            print(f'F1 score ({i+1}h, >= 1mm)', 2*x / (1e-6 + 2*x + confusion_matrix[i][0][1] + confusion_matrix[i][0][2] + confusion_matrix[i][1][0] + confusion_matrix[i][2][0]))
+            print(f'F1 score ({i+1}h, < 1mm)', 2* confusion_matrix[i][0][0]/(1e-6 + 2* confusion_matrix[i][0][0] + confusion_matrix[i][0][1] + confusion_matrix[i][0][2] + confusion_matrix[i][1][0] + confusion_matrix[i][2][0]))
             
 if __name__ == '__main__':
     import argparse

@@ -83,7 +83,7 @@ def train(args):
                 f_log.write(f'Duration time is {end - start}\n')
                 f_log.flush()
                 model.eval()
-                torch.save(model.module.state_dict(), f'./checkpoints/finetuning_new_{step_cnt}.pkt')
+                torch.save(model.module.state_dict(), f'./checkpoints/finetuning_ours_{step_cnt}.pkt')
                 val_loss_sum, val_acc = 0., 0
                 _TP1, _TN1, _FP1, _FN1 = 0, 0, 0, 0
                 _TP2, _TN2, _FP2, _FN2 = 0, 0, 0, 0
@@ -135,7 +135,7 @@ if __name__ == '__main__':
                         help="learning rate")
     parser.add_argument("--n-steps", type=int, default=35000,
                         help="number of training steps")
-    parser.add_argument("--batch-size", type=int, default=20,
+    parser.add_argument("--batch-size", type=int, default=24,
                         help="number of batch size")
     parser.add_argument("--data-path", type=str, default=None,
                         help="path of radar data")

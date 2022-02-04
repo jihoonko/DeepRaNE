@@ -115,7 +115,7 @@ if __name__ == '__main__':
                         help="learning rate")
     parser.add_argument("--n-steps", type=int, default=35000,
                         help="number of training steps")
-    parser.add_argument("--batch-size", type=int, default=20,
+    parser.add_argument("--batch-size", type=int, default=24,
                         help="number of batch size")
     parser.add_argument("--data-path", type=str, default=None,
                         help="path of radar data")
