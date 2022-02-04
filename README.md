@@ -8,7 +8,7 @@ In this software, we provided the following implementations in PyTorch:
 - Authors: Jihoon Ko*, Kyuhan Lee*, Hyunjin Hwang*, Seok-Geun Oh, Seok-Woo Son, Kijung Shin
 - Version: 1.0
 
-In order to download dummy checkpoints for running demos, use the following commands:
+In order to download example checkpoints for running demos, use the following commands:
 
 ```bash
 $ wget https://www.dropbox.com/s/oitxstngis1ht1d/pretraining_10.pkt -O precipitation\ nowcasting/checkpoints/pretraining_10.pkt
