@@ -8,4 +8,11 @@ In this software, we provided the following implementations in PyTorch:
 - Authors: Jihoon Ko*, Kyuhan Lee*, Hyunjin Hwang*, Seok-Woo Son, Kijung Shin
 - Version: 1.0
 
+In order to download dummy checkpoints for running demos, use the following commands:
+
+```bash
+$ wget https://www.dropbox.com/s/p3062yite6lvnq3/finetuned.pkt -O precipitation\ nowcasting/checkpoints/pretrained.pkt
+$ wget https://www.dropbox.com/s/p3062yite6lvnq3/finetuned.pkt -O precipitation\ nowcasting/checkpoints/finetuned.pkt
+```
+
 For more details, see [user_guide.pdf](https://github.com/jihoonko/precipitation-nowcasting/blob/master/user_guide.pdf).
